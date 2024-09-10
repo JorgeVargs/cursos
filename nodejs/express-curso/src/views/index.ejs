@@ -1,0 +1,21 @@
+<%- include('partials/header'); %>
+
+    <h1><%= title %></h1>
+
+    <% if(isActive){ %>
+        <p>This is an active page.</p>
+    <% } else {%>
+        <p>This is an inactive page.</p>
+    <% } %>
+
+
+    <%= new Date() %>
+
+   <ul>
+    <% for(let i = 0; i < users.length; i++){ %>
+        <li><%= users[i].id %> <%= users[i].name %> <%= users[i].lastname %></li>    
+    <% } %>
+   </ul>
+
+<%- include('partials/footer'); %>
+ 

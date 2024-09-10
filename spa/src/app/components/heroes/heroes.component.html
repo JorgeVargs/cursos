@@ -1,0 +1,24 @@
+<h1>Héroes <small>Marvel & DC</small></h1>
+
+<hr>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let heroe of heroes; let i = index">
+        <div class="card animated fadeIn fast" >
+            <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+            <div class="card-body">
+                <h5 class="card-title">{{ heroe.nombre }}</h5>
+                <p class="card-text">{{ heroe.bio }}</p>
+                <div class="d-grid gap-2">
+                    <!-- Estas son dos formas para cambiar de ruta, una a través de un evento en el boton y el otro a través del router link -->
+                    <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más.</button>
+                    <!-- <a [routerLink]="['/heroe',i]"  class="btn btn-outline-primary">Ver más</a> -->
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ heroe.aparicion }}</small>
+            </div>
+        </div>
+    </div>
+</div>
